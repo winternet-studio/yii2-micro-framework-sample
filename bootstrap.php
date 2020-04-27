@@ -8,7 +8,7 @@ $config = [
 	'basePath' => __DIR__,
 	// this is where the application will find all controllers
 	// 'controllerNamespace' => 'app\controllers',
-	// set an alias to enable autoloading of classes from the 'micro' namespace
+	// set an alias to enable autoloading of classes from the 'app' namespace
 	'aliases' => [
 		'@app' => __DIR__,
 	],
