@@ -24,6 +24,8 @@ $config = [
 ];
 
 (new yii\web\Application($config));
+// Or if you are building a console application:
+// (new yii\console\Application($config));
 
 class Customer extends \yii\db\ActiveRecord {
 	public static function tableName() {
