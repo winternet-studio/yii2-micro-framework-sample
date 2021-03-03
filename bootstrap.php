@@ -8,6 +8,9 @@ $config = [
 	'basePath' => __DIR__,
 	// this is where the application will find all controllers
 	// 'controllerNamespace' => 'app\controllers',
+	'bootstrap' => [
+		'log',
+	],
 	// set an alias to enable autoloading of classes from the 'app' namespace
 	'aliases' => [
 		'@app' => __DIR__,
@@ -19,6 +22,16 @@ $config = [
 			'username' => 'yourusername',
 			'password' => 'yourpassword',
 			'charset' => 'utf8',
+		],
+		'log' => [
+			'traceLevel' => YII_DEBUG ? 3 : 0,
+			'targets' => [
+				[
+					'class' => 'yii\log\FileTarget',
+					'levels' => ['error', 'warning'],
+					'maxFileSize' => 1024,  // 1 Mb
+				],
+			],
 		],
 	],
 ];

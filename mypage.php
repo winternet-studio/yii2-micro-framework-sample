@@ -1,6 +1,9 @@
 <?php
 require_once('bootstrap.php');
 
-$record = Customer::find()->limit(1)->one();
+$customers = Customer::find()->limit(5)->all();
 
-var_dump($record);
+foreach ($customers as $customer) {
+	print_r($customer->toArray());
+	// do something...
+}
