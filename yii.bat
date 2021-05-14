@@ -1,6 +1,6 @@
 @echo off
 
-rem For running command line/console applications (Linux/Mac)
+rem For running command line/console applications (Windows)
 
 rem -------------------------------------------------------------
 rem  Yii command line bootstrap script for Windows.

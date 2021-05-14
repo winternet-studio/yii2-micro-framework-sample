@@ -28,7 +28,7 @@ $config = [
 			'targets' => [
 				[
 					'class' => 'yii\log\FileTarget',
-					// 'logFile' => '@app/app.log',  //set path to log file if you don't want to use default
+					// 'logFile' => '@app/app.log',  //if you don't want to use default (see Yii documentation)
 					'levels' => ['error', 'warning'],
 					'maxFileSize' => 1024,  // 1 Mb
 				],
