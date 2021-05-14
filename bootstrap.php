@@ -28,6 +28,7 @@ $config = [
 			'targets' => [
 				[
 					'class' => 'yii\log\FileTarget',
+					// 'logFile' => '@app/app.log',  //set path to log file if you don't want to use default
 					'levels' => ['error', 'warning'],
 					'maxFileSize' => 1024,  // 1 Mb
 				],
@@ -36,9 +37,15 @@ $config = [
 	],
 ];
 
-(new yii\web\Application($config));
-// Or if you are building a console application:
-// (new yii\console\Application($config));
+if (PHP_SAPI === 'cli') {
+	// when running a console application
+	$application = new yii\console\Application($config);
+	$exitCode = $application->run();
+	exit($exitCode);
+} else {
+	// when running through a webserver
+	(new yii\web\Application($config));
+}
 
 class Customer extends \yii\db\ActiveRecord {
 	public static function tableName() {
